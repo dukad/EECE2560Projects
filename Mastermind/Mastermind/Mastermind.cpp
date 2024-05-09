@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 
+#include "code.h"
 
 int main()
 {
