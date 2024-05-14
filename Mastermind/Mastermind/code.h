@@ -1,19 +1,27 @@
+#pragma once
+
+
 #include <iostream>
-#incldue <vector>
+#include <vector>
 
 // secret code object
 class Code
 {
 public:
 	// constructor
-	Code(int range, int numElements);
-	// destructor
-	~Code();
+	Code(int n, int m);
+	Code(int codeArray[], int length);
 	// member function to compare the guess to the code
-	void compareGuess(int* guess, int* correct, int* inAnswer);
-	// member function to print the code
-	void revealCode();
+	int checkCorrect(Code guess);
+	int checkIncorrect(Code guess);
+	void initializeRandom();
+	// reveal the code
+	void reveal();
+	//
 private:
 	//secret code vector object
-	std::vector<int> code;
+	std::vector<int> code_vector;
+	int n;
+	int m;
 };
+
