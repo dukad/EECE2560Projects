@@ -5,9 +5,6 @@
 #include "code.h"
 #include "Response.h"
 #include <vector>
-#include "Response.h"
-#include "Mastermind.h"
-using namespace std;
 
 using namespace std;
 
@@ -62,10 +59,10 @@ void Mastermind::revealCode()
 {
 	secretCode.reveal();
 }
-void Mastermind::playGame(Code secretCode) {
+void Mastermind::playGame() {
 	secretCode.initializeRandom();
 	secretCode.reveal();
-	for (int i = 0, i < 10, i++) {
+	for (int i = 0; i < 10; i++) {
 		Code guess = humanGuess();
 		Response res = getResponse(guess);
 		cout << "Response: " << res << endl;
@@ -73,7 +70,7 @@ void Mastermind::playGame(Code secretCode) {
 			cout << "You Win!!!" << endl;
 			break;
 		}
-		else if (i = 9) {
+		else if (i == 9) {
 			cout << "You Lose." << endl;
 		}
 	}

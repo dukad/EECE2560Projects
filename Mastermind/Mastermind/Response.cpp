@@ -16,7 +16,7 @@ bool operator==(Response const& res_1, Response const& res_2) {
 }
 
 ostream& operator<<(ostream& ostr, const Response& res) {
-	ostr << "Num Correct: " << res.num_correct << "Num Incorrect: " << res.num_incorrect;
+	ostr << "Num Correct: " << res.num_correct << " Num Incorrect: " << res.num_incorrect;
 	return ostr;
 }
 

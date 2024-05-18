@@ -1,8 +1,2 @@
-﻿  Mastermind.cpp
-  code.cpp
-C:\Users\kaden\Documents\Summer 2024\Eng. Algorithms\EECE2560Projects\Mastermind\Mastermind\code.cpp(12,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-C:\Users\kaden\Documents\Summer 2024\Eng. Algorithms\EECE2560Projects\Mastermind\Mastermind\code.cpp(23,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-  main.cpp
-  Generating Code...
-  LINK : C:\Users\kaden\Documents\Summer 2024\Eng. Algorithms\EECE2560Projects\Mastermind\x64\Debug\Mastermind.exe not found or not built by the last incremental link; performing full link
-  Mastermind.vcxproj -> C:\Users\kaden\Documents\Summer 2024\Eng. Algorithms\EECE2560Projects\Mastermind\x64\Debug\Mastermind.exe
+﻿  Response.cpp
+  Mastermind.vcxproj -> C:\Users\ryand\OneDrive - Northeastern University\Fundamentals of Algorithms\Github Stuff\EECE2560Projects\Mastermind\x64\Debug\Mastermind.exe

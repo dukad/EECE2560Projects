@@ -1,25 +1,18 @@
 #pragma once
 #include <iostream>
-
+#include <vector>
 #include "code.h"
 #include "Response.h"
 
 using namespace std;
-#include "code.h"
-#include "Response.h"
 
-
-using namespace std;
 
 class Mastermind
 {
 public:
 	Mastermind();
 	Mastermind(int n, int m);
-	void playGame(Code secretCode);
-public:
-	Mastermind();
-	Mastermind(int n, int m);
+	void playGame();
 
 
 private:
