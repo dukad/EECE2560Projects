@@ -25,10 +25,22 @@ Mastermind::Mastermind(int n, int m)
 Code Mastermind::humanGuess()
 {
 	vector<int> guessVector(n);
-	cout << "Enter your guess, pressing enter in between every digit: ";
+	cout << "Enter your guess, pressing enter in between every digit: \n";
 	for (int i = 0; i < n; i++)
 	{
-		cin >> guessVector[i];
+		while (!(cin >> guessVector[i])) {
+			// guess is invalid
+			cout << "Invalid input. Please enter a valid digit: ";
+			// clear all of the input
+			cin.clear();
+			cin.ignore(10000, '\n');
+		}
+		if (guessVector[i] >= m || guessVector[i] < 0)
+		{
+			cout << "Invalid input. Please enter a valid number in the range 0 to " << m << ": \n";
+			i--;
+		}
+		
 	}
 
 	Code guess = Code(guessVector, n);
@@ -65,7 +77,7 @@ void Mastermind::playGame() {
 	for (int i = 0; i < 10; i++) {
 		Code guess = humanGuess();
 		Response res = getResponse(guess);
-		cout << "Response: " << res << endl;
+		cout << "Response (" << i+1 << "/10): " << res << endl;
 		if (isSolved(res)) {
 			cout << "You Win!!!" << endl;
 			break;
