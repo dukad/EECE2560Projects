@@ -72,11 +72,15 @@ void Mastermind::revealCode()
 	secretCode.reveal();
 }
 void Mastermind::playGame() {
+	//Generate and print a random code object
 	secretCode.initializeRandom();
 	secretCode.reveal();
+	//Iterate through user guesses 10 times
 	for (int i = 0; i < 10; i++) {
+		//Intake guess from user then generate response
 		Code guess = humanGuess();
 		Response res = getResponse(guess);
+		//print response and win/lose case
 		cout << "Response (" << i+1 << "/10): " << res << endl;
 		if (isSolved(res)) {
 			cout << "You Win!!!" << endl;
