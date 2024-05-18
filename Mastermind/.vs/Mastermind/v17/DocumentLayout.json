@@ -3,24 +3,32 @@
   "WorkspaceRootPath": "C:\\Users\\kaden\\Documents\\Summer 2024\\Eng. Algorithms\\EECE2560Projects\\Mastermind\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E00E98C0-56F1-44AD-BA74-68306157EF5D}|Mastermind\\Mastermind.vcxproj|C:\\Users\\kaden\\Documents\\Summer 2024\\Eng. Algorithms\\EECE2560Projects\\Mastermind\\Mastermind\\Mastermind.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{E00E98C0-56F1-44AD-BA74-68306157EF5D}|Mastermind\\Mastermind.vcxproj|solutionrelative:Mastermind\\Mastermind.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{E00E98C0-56F1-44AD-BA74-68306157EF5D}|Mastermind\\Mastermind.vcxproj|C:\\Users\\kaden\\Documents\\Summer 2024\\Eng. Algorithms\\EECE2560Projects\\Mastermind\\Mastermind\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{E00E98C0-56F1-44AD-BA74-68306157EF5D}|Mastermind\\Mastermind.vcxproj|solutionrelative:Mastermind\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E00E98C0-56F1-44AD-BA74-68306157EF5D}|Mastermind\\Mastermind.vcxproj|C:\\Users\\kaden\\Documents\\Summer 2024\\Eng. Algorithms\\EECE2560Projects\\Mastermind\\Mastermind\\code.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{E00E98C0-56F1-44AD-BA74-68306157EF5D}|Mastermind\\Mastermind.vcxproj|solutionrelative:Mastermind\\code.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E00E98C0-56F1-44AD-BA74-68306157EF5D}|Mastermind\\Mastermind.vcxproj|C:\\Users\\kaden\\Documents\\Summer 2024\\Eng. Algorithms\\EECE2560Projects\\Mastermind\\Mastermind\\Mastermind.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{E00E98C0-56F1-44AD-BA74-68306157EF5D}|Mastermind\\Mastermind.vcxproj|solutionrelative:Mastermind\\Mastermind.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{E00E98C0-56F1-44AD-BA74-68306157EF5D}|Mastermind\\Mastermind.vcxproj|C:\\Users\\kaden\\Documents\\Summer 2024\\Eng. Algorithms\\EECE2560Projects\\Mastermind\\Mastermind\\Mastermind.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{E00E98C0-56F1-44AD-BA74-68306157EF5D}|Mastermind\\Mastermind.vcxproj|solutionrelative:Mastermind\\Mastermind.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E00E98C0-56F1-44AD-BA74-68306157EF5D}|Mastermind\\Mastermind.vcxproj|C:\\Users\\kaden\\Documents\\Summer 2024\\Eng. Algorithms\\EECE2560Projects\\Mastermind\\Mastermind\\code.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{E00E98C0-56F1-44AD-BA74-68306157EF5D}|Mastermind\\Mastermind.vcxproj|solutionrelative:Mastermind\\code.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{E00E98C0-56F1-44AD-BA74-68306157EF5D}|Mastermind\\Mastermind.vcxproj|C:\\Users\\kaden\\Documents\\Summer 2024\\Eng. Algorithms\\EECE2560Projects\\Mastermind\\Mastermind\\code.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{E00E98C0-56F1-44AD-BA74-68306157EF5D}|Mastermind\\Mastermind.vcxproj|solutionrelative:Mastermind\\code.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E00E98C0-56F1-44AD-BA74-68306157EF5D}|Mastermind\\Mastermind.vcxproj|C:\\Users\\kaden\\Documents\\Summer 2024\\Eng. Algorithms\\EECE2560Projects\\Mastermind\\Mastermind\\Response.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{E00E98C0-56F1-44AD-BA74-68306157EF5D}|Mastermind\\Mastermind.vcxproj|solutionrelative:Mastermind\\Response.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E00E98C0-56F1-44AD-BA74-68306157EF5D}|Mastermind\\Mastermind.vcxproj|C:\\Users\\kaden\\Documents\\Summer 2024\\Eng. Algorithms\\EECE2560Projects\\Mastermind\\Mastermind\\Response.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{E00E98C0-56F1-44AD-BA74-68306157EF5D}|Mastermind\\Mastermind.vcxproj|solutionrelative:Mastermind\\Response.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,43 +38,69 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 6,
+              "Title": "Response.h",
+              "DocumentMoniker": "C:\\Users\\kaden\\Documents\\Summer 2024\\Eng. Algorithms\\EECE2560Projects\\Mastermind\\Mastermind\\Response.h",
+              "RelativeDocumentMoniker": "Mastermind\\Response.h",
+              "ToolTip": "C:\\Users\\kaden\\Documents\\Summer 2024\\Eng. Algorithms\\EECE2560Projects\\Mastermind\\Mastermind\\Response.h",
+              "RelativeToolTip": "Mastermind\\Response.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAASAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-05-18T17:35:02.783Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Response.cpp",
+              "DocumentMoniker": "C:\\Users\\kaden\\Documents\\Summer 2024\\Eng. Algorithms\\EECE2560Projects\\Mastermind\\Mastermind\\Response.cpp",
+              "RelativeDocumentMoniker": "Mastermind\\Response.cpp",
+              "ToolTip": "C:\\Users\\kaden\\Documents\\Summer 2024\\Eng. Algorithms\\EECE2560Projects\\Mastermind\\Mastermind\\Response.cpp",
+              "RelativeToolTip": "Mastermind\\Response.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-05-18T17:34:14.332Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "Mastermind.h",
               "DocumentMoniker": "C:\\Users\\kaden\\Documents\\Summer 2024\\Eng. Algorithms\\EECE2560Projects\\Mastermind\\Mastermind\\Mastermind.h",
               "RelativeDocumentMoniker": "Mastermind\\Mastermind.h",
               "ToolTip": "C:\\Users\\kaden\\Documents\\Summer 2024\\Eng. Algorithms\\EECE2560Projects\\Mastermind\\Mastermind\\Mastermind.h",
               "RelativeToolTip": "Mastermind\\Mastermind.h",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-05-18T17:19:14.511Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "Mastermind.cpp",
               "DocumentMoniker": "C:\\Users\\kaden\\Documents\\Summer 2024\\Eng. Algorithms\\EECE2560Projects\\Mastermind\\Mastermind\\Mastermind.cpp",
               "RelativeDocumentMoniker": "Mastermind\\Mastermind.cpp",
               "ToolTip": "C:\\Users\\kaden\\Documents\\Summer 2024\\Eng. Algorithms\\EECE2560Projects\\Mastermind\\Mastermind\\Mastermind.cpp",
               "RelativeToolTip": "Mastermind\\Mastermind.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAGMAAAASAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAYAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-05-18T17:15:09.298Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "code.cpp",
               "DocumentMoniker": "C:\\Users\\kaden\\Documents\\Summer 2024\\Eng. Algorithms\\EECE2560Projects\\Mastermind\\Mastermind\\code.cpp",
               "RelativeDocumentMoniker": "Mastermind\\code.cpp",
               "ToolTip": "C:\\Users\\kaden\\Documents\\Summer 2024\\Eng. Algorithms\\EECE2560Projects\\Mastermind\\Mastermind\\code.cpp",
               "RelativeToolTip": "Mastermind\\code.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAHgAAAABAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAYAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-05-14T14:59:06.215Z",
               "EditorCaption": ""
@@ -79,19 +113,20 @@
               "RelativeDocumentMoniker": "Mastermind\\code.h",
               "ToolTip": "C:\\Users\\kaden\\Documents\\Summer 2024\\Eng. Algorithms\\EECE2560Projects\\Mastermind\\Mastermind\\code.h",
               "RelativeToolTip": "Mastermind\\code.h",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAADAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-05-13T19:16:13.693Z"
+              "WhenOpened": "2024-05-13T19:16:13.693Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "main.cpp",
               "DocumentMoniker": "C:\\Users\\kaden\\Documents\\Summer 2024\\Eng. Algorithms\\EECE2560Projects\\Mastermind\\Mastermind\\main.cpp",
               "RelativeDocumentMoniker": "Mastermind\\main.cpp",
               "ToolTip": "C:\\Users\\kaden\\Documents\\Summer 2024\\Eng. Algorithms\\EECE2560Projects\\Mastermind\\Mastermind\\main.cpp",
               "RelativeToolTip": "Mastermind\\main.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAEQAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAWAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-05-13T15:41:44.039Z",
               "EditorCaption": ""

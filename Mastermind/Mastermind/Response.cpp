@@ -3,6 +3,11 @@
 #include <vector>
 using namespace std;
 
+Response::Response() {
+	num_correct = 0;
+	num_incorrect = 0;
+}
+
 void Response::setNumCorrect(int x) { num_correct = x; }
 void Response::setNumIncorrect(int y) { num_incorrect = y; }
 
@@ -14,3 +19,7 @@ ostream& operator<<(ostream& ostr, const Response& res) {
 	ostr << "Num Correct: " << res.num_correct << "Num Incorrect: " << res.num_incorrect;
 	return ostr;
 }
+
+int Response::getCorrect() { return num_correct; }
+
+int Response::getIncorrect() { return num_incorrect; }

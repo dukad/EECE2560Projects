@@ -11,6 +11,8 @@ public:
 	friend ostream& operator<<(ostream& ostr, const Response& res);
 	void setNumCorrect(int x);
 	void setNumIncorrect(int y);
+	int getCorrect();
+	int getIncorrect();
 
 private:
 	int num_correct;

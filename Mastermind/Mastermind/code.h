@@ -9,8 +9,10 @@ class Code
 {
 public:
 	// constructor
+	Code();
 	Code(int n, int m);
 	Code(int codeArray[], int length);
+	Code(std::vector<int> codeVector, int length);
 	// member function to compare the guess to the code
 	int checkCorrect(Code guess);
 	int checkIncorrect(Code guess);

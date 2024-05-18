@@ -3,6 +3,15 @@
 #include <iostream>
 #include <random>
 
+Code::Code()
+{
+	// default constructor
+	n = 5;
+	m = 10;
+	code_vector = std::vector<int>(n);
+	srand(time(NULL)); // random seeding for random number generation
+}
+
 // constructors
 Code::Code(int n, int m)
 {
@@ -29,6 +38,24 @@ Code::Code(int codeArray[], int length)
 		if (codeArray[i] > m)
 		{
 			m = codeArray[i];
+		}
+	}
+	m++;
+}
+
+Code::Code(std::vector<int> codeVector, int length)
+{
+	code_vector = codeVector;
+
+	// set n to be the length of the code vector
+	n = length;
+	// set m to be the range of the code vector
+	m = 0;
+	for (int i = 0; i < length; i++)
+	{
+		if (codeVector[i] > m)
+		{
+			m = codeVector[i];
 		}
 	}
 	m++;
