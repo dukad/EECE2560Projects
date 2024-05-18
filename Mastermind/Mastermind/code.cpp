@@ -60,19 +60,44 @@ int Code::checkCorrect(Code guess)
 
 int Code::checkIncorrect(Code guess)
 {
-	int incorrect = 0;
-	for (int i = 0; i < n; i++)
-	{
-		for (int j = 0; j < n; j++)
-		{
-			if (i != j) {
-				if (code_vector[i] == guess.code_vector[j])
-				{
-					incorrect++;
-			}
-			}
+	// create a copy of the guess as just a vector
+	std::vector<int> guess_vector = guess.code_vector;
+	std::vector<int> code_copy = code_vector;
+	// iterate through the code and the guess
+	for (int i = n-1; i >= 0; i--) {
+		if (guess.code_vector[i] == code_vector[i]) {
+			// remove the guess from the copy
+			guess_vector.erase(guess_vector.begin() + i);
+			code_copy.erase(code_copy.begin() + i);
 		}
 	}
+	// we now have two vectors that have any correct numbers removed
+	// simply iterate through the guess and check if its in the code
+	// print out the vector copies
+	
+	int incorrect = 0;
+	
+	// while the guess vector still has elements
+	while (guess_vector.size() > 0) {
+		// check to see if the first element is in the code
+		if (std::find(code_copy.begin(), code_copy.end(), guess_vector[0]) != code_copy.end()) {
+			// store the value
+			int remove_value = guess_vector[0];
+			// if it is, remove it from both vectors
+			code_copy.erase(std::find(code_copy.begin(), code_copy.end(), guess_vector[0]));
+			guess_vector.erase(guess_vector.begin());
+			// increment the incorrect counter
+			incorrect++;
+		}
+		else {
+			// if it is not, remove it from the guess vector
+			guess_vector.erase(guess_vector.begin());
+		}
+	}
+
+	
+
+	
 	return incorrect;
 }
 
@@ -83,4 +108,14 @@ void Code::reveal()
 		std::cout << code_vector[i] << " ";
 	}
 	std::cout << std::endl;
+}
+
+//operator overload
+std::ostream& operator<<(std::ostream& os, const Code& code)
+{
+	for (int i = 0; i < code.n; i++)
+	{
+		os << code.code_vector[i] << " ";
+	}
+	return os;
 }

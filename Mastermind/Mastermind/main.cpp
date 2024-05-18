@@ -8,7 +8,7 @@ int main()
 {
 	const int length = 5;
 	int range = 10;
-	// initialize a new code object randomlyjas
+	// initialize a new code object randomly
 	Code secret_code(5, 10);
 	secret_code.initializeRandom();
 
@@ -40,7 +40,8 @@ int main()
 		int incorrect = secret_code.checkIncorrect(guesses[i]);
 
 		// print the feedback to the console
-		std::cout << "Guess " << i + 1 << ": " << std::endl;
+		std::cout << "Guess " << i + 1 << ": " << guesses[i] << std::endl;
+		
 		std::cout << "Correct: " << correct << std::endl;
 		std::cout << "Incorrect: " << incorrect << std::endl;
 
@@ -61,5 +62,7 @@ int main()
 	// reveal the secret code
 	std::cout << "The secret code was: ";
 	secret_code.reveal();
+
+	return 0;
 }
 

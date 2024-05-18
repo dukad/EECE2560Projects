@@ -17,6 +17,9 @@ public:
 	void initializeRandom();
 	// reveal the code
 	void reveal();
+	// overload << operator
+	friend std::ostream& operator<<(std::ostream& os, const Code& code);
+	
 	//
 private:
 	//secret code vector object

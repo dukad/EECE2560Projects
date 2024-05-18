@@ -1,5 +1,2 @@
-﻿  code.cpp
-C:\Users\kaden\Documents\Summer 2024\Eng. Algorithms\EECE2560Projects\Mastermind\Mastermind\code.cpp(14,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-  main.cpp
-  Generating Code...
+﻿  main.cpp
   Mastermind.vcxproj -> C:\Users\kaden\Documents\Summer 2024\Eng. Algorithms\EECE2560Projects\Mastermind\x64\Debug\Mastermind.exe
