@@ -1,9 +1,13 @@
+#pragma once
 #include "Mastermind.h"
 #include <iostream>
 
 #include "code.h"
 #include "Response.h"
 #include <vector>
+#include "Response.h"
+#include "Mastermind.h"
+using namespace std;
 
 using namespace std;
 
@@ -57,4 +61,20 @@ bool Mastermind::isSolved(Response response)
 void Mastermind::revealCode()
 {
 	secretCode.reveal();
+}
+void Mastermind::playGame(Code secretCode) {
+	secretCode.initializeRandom();
+	secretCode.reveal();
+	for (int i = 0, i < 10, i++) {
+		Code guess = humanGuess();
+		Response res = getResponse(guess);
+		cout << "Response: " << res << endl;
+		if (isSolved(res)) {
+			cout << "You Win!!!" << endl;
+			break;
+		}
+		else if (i = 9) {
+			cout << "You Lose." << endl;
+		}
+	}
 }
