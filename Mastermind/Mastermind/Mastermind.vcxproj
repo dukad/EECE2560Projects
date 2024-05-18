@@ -133,6 +133,7 @@
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Mastermind.h" />
     <ClInclude Include="Response.h" />
     <ClInclude Include="code.h" />
   </ItemGroup>
