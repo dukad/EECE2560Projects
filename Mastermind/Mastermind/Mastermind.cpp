@@ -8,9 +8,9 @@ int main()
 	// prompt the user for the range of elements and the number of elements
 	bool success = false;
 	int range, numElements;
-	std::cout << "Enter the range of elements: ";
+	std::cout << "Enter the range of elements m: ";
 	std::cin >> range;
-	std::cout << "Enter the number of elements: ";
+	std::cout << "Enter the number of elements n: ";
 	std::cin >> numElements;
 
 	// create a vector to store the elements
