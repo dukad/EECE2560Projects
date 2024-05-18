@@ -10,6 +10,7 @@ using namespace std;
 
 Mastermind::Mastermind()
 {
+	// default constructor with default values!
 	n = 5;
 	m = 10;
 	secretCode = Code(n, m);
@@ -17,6 +18,7 @@ Mastermind::Mastermind()
 
 Mastermind::Mastermind(int n, int m)
 {
+	// taking inputs for both length and range
 	this->n = n;
 	this->m = m;
 	secretCode = Code(n, m);
@@ -24,7 +26,9 @@ Mastermind::Mastermind(int n, int m)
 
 Code Mastermind::humanGuess()
 {
+	// create a vector to store the guess
 	vector<int> guessVector(n);
+	// ask the user for their guess
 	cout << "Enter your guess, pressing enter in between every digit: \n";
 	for (int i = 0; i < n; i++)
 	{
@@ -42,13 +46,14 @@ Code Mastermind::humanGuess()
 		}
 		
 	}
-
+	// create a code object with the guess vector
 	Code guess = Code(guessVector, n);
 	return guess;
 }
 
 Response Mastermind::getResponse(Code guess)
 {
+	// check the guess against the secret code
 	int correct = secretCode.checkCorrect(guess);
 	int incorrect = secretCode.checkIncorrect(guess);
 	Response response = Response();
@@ -69,6 +74,7 @@ bool Mastermind::isSolved(Response response)
 
 void Mastermind::revealCode()
 {
+	// reveal the secret code
 	secretCode.reveal();
 }
 void Mastermind::playGame() {
