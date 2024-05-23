@@ -27,3 +27,8 @@ Mastermind/.vs/Mastermind/v17/ipch/AutoPCH/2c926ba326a97866/CODE.ipch
 Mastermind/.vs/Mastermind/v17/DocumentLayout.json
 Mastermind/.vs/Mastermind/v17/Browse.VC.db
 Mastermind/.vs/Mastermind/v17/.suo
+*.obj
+*.recipe
+*.ipch
+*.json
+*.db
