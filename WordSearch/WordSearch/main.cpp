@@ -1,20 +1,130 @@
-// WordSearch.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
-
 #include <iostream>
+#include <fstream>
+
+#include "dictionary.h"
+#include "grid.h"
+
+using namespace std;
+
+#define MIN_WORD_LENGTH 5
+
+
+string getWord(grid g, int row, int col, int h, int v, int wordLength)
+{
+	//cout << "Getting possible word in direction: " << h << ", " << v << ", " << wordLength << endl;
+	// this function will return a string which should be check for a match in the dictionary
+	string word = "";
+	for (int i = 0; i < wordLength; i++)
+	{
+		int newRow = row + i * h;
+		int newCol = col + i * v;
+		// now ensure that the new row and column are within the grid
+		newRow = (newRow + g.rows) % g.rows;
+		newCol = (newCol + g.cols) % g.cols;
+
+		//cout << "New row: " << newRow << " New col: " << newCol << endl;
+		
+		word += g.matrix[newRow][newCol];
+	}
+	return word;
+}
+
+void checkAllDirections(dictionary dict, grid g, int row, int col, vector<string> &found)
+{
+	//cout << "Checking all directions at index: " << row << ", " << col << endl;
+	int wordLength = MIN_WORD_LENGTH;
+	while (wordLength <= min(g.rows, g.cols))
+	{
+		for (int h = -1; h <= 1; h++)
+		{
+			for (int v = -1; v <= 1; v++)
+			{
+				string word = getWord(g, row, col, h, v, wordLength); // get the possible word in that direction etc. 
+				//cout << "Checking word: " << word << endl;
+				int index = dict.binarySearch(word); // check if the word is in the dictionary
+				if (index != -1)
+				{
+					cout << "found: " << word << " at position: " << row << ", " << col << endl;
+					// save the word in the found vector
+					found.push_back(word);
+				}
+			}
+		}
+		wordLength++;
+	}
+}
+
+
+void findMatches(dictionary dict, grid g, vector<string> &found)
+{
+	//cout << "Finding matches" << endl;
+	// iterate through the entire grid position by position
+	for (int row = 0; row < g.rows; row++) {
+		for (int col = 0; col < g.cols; col++) {
+			// check for matches in all directions
+			checkAllDirections(dict, g, row, col, found);
+		}
+	}
+}
+
+void search() {
+	string gridFile;
+	cout << "Enter the name of the grid file: ";
+	cin >> gridFile;
+
+	grid g(gridFile);
+
+	cout << "Would you like to use the pre-sorted dictionary file? (y/n): ";	
+	char choice;
+	cin >> choice;
+	dictionary dict;
+	if (choice == 'y')
+	{
+		//initialize dictionary
+		string path = "SortedDictionary";
+		//read from dictionary file
+		cout << "Reading from dictionary file" << endl;
+		dict.readFromDictFile(path);
+	}
+	else {
+		//initialize dictionary
+		string path = "Dictionary";
+		//read from dictionary file
+		cout << "Reading from dictionary file" << endl;
+		dict.readFromDictFile(path);
+		//sort the dictionary
+		cout << "Sorting the dictionary" << endl;
+		dict.selectionSort();
+		//search for a word
+		cout << "Writing to the sorted dictionary file" << endl;
+		dict.writeToSortedDictFile();
+	}
+
+	// init vector to store found words
+	vector<string> found;
+
+	// finding matches
+	findMatches(dict, g, found);
+	cout << "Search complete! Words found (saved to found.txt):" << endl;
+
+	// print the found words, also save them to a file
+	ofstream file("found.txt");
+	if (file.is_open())
+	{
+		for (int i = 0; i < found.size(); i++)
+		{
+			file << found[i] << endl;
+			cout << "found: " << found[i] << endl;
+		}
+	}
+	else
+	{
+		cout << "Error: Could not open file" << endl;
+	}
+}
 
 int main()
 {
-    std::cout << "Hello World!\n";
+	search();
+	return 0;
 }
-
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
