@@ -7,6 +7,7 @@ using namespace std;
 
 grid::grid(string fileName)
 {
+	// open the file
 	ifstream file(fileName);
 	if (!file)
 	{
@@ -14,12 +15,14 @@ grid::grid(string fileName)
 		exit(1);
 	}
 
+	// take the dimenstions from the top of the file
 	file >> rows >> cols;
 	matrix.resize(rows, vector<char>(cols));
 	for (int i = 0; i < rows; i++)
 	{
 		for (int j = 0; j < cols; j++)
 		{
+			// enter each character into the grid
 			file >> matrix[i][j];
 		}
 	}

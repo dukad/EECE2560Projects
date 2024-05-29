@@ -125,6 +125,7 @@ void search() {
 
 int main()
 {
+	// call the search function to do all the work
 	search();
 	return 0;
 }

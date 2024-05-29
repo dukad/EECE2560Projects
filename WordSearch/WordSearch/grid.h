@@ -13,6 +13,8 @@ public:
 	int rows;
 	int cols;
 
+
+	// friend for easy printing
 	friend ostream& operator<<(ostream& os, grid g)
 	{
 		for (int i = 0; i < g.rows; i++)

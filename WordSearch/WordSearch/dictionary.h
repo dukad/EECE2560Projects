@@ -7,12 +7,14 @@ using namespace std;
 class dictionary
 {
 public:
+	// defualt constructor
 	dictionary();
 	void readFromDictFile(string path);
 	void selectionSort();
 	int binarySearch(string word);
 	void writeToSortedDictFile();
 
+	// friend for easy pritning of the dictionary
 	friend ostream& operator<<(ostream& os, dictionary& dict)
 	{
 		for (int i = 0; i < dict.dict.size(); i++)
