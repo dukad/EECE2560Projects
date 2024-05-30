@@ -1,3 +1,6 @@
+// Kaden Du and Ryan Dailor
+// Definition of the Grid Class
+
 #pragma once
 
 #include <iostream>

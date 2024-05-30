@@ -1,3 +1,6 @@
+// Kaden Du and Ryan Dailor
+// Definition of the Dictionary Class
+
 #pragma once
 #include <iostream>
 #include <vector>

@@ -1,3 +1,6 @@
+// Kaden Du and Ryan Dailor
+// contains the implementation for the grid class
+
 #include "grid.h"
 #include <iostream>
 #include <vector>

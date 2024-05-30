@@ -1,3 +1,6 @@
+// Kaden Du and Ryan Dailor
+// contains implementation for the dictionary class
+
 #include "dictionary.h"
 #include <fstream>
 #include <iostream>

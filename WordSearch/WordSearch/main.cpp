@@ -1,3 +1,6 @@
+// Main for Project 2a - Kaden Du & Ryan Dailor
+// contains all global functions and the main to run the program
+
 #include <iostream>
 #include <fstream>
 
@@ -31,6 +34,7 @@ string getWord(grid g, int row, int col, int h, int v, int wordLength)
 
 void checkAllDirections(dictionary dict, grid g, int row, int col, vector<string> &found)
 {
+	// given a coordinate in the gird, this function will check for words in all directions
 	//cout << "Checking all directions at index: " << row << ", " << col << endl;
 	int wordLength = MIN_WORD_LENGTH;
 	while (wordLength <= min(g.rows, g.cols))
@@ -57,6 +61,7 @@ void checkAllDirections(dictionary dict, grid g, int row, int col, vector<string
 
 void findMatches(dictionary dict, grid g, vector<string> &found)
 {
+	// this function will iterate through the entire grid and check for matches
 	//cout << "Finding matches" << endl;
 	// iterate through the entire grid position by position
 	for (int row = 0; row < g.rows; row++) {
@@ -68,6 +73,7 @@ void findMatches(dictionary dict, grid g, vector<string> &found)
 }
 
 void search() {
+	// this function will handle loading inputs from keyboard input to control which grid and dictionary files to use
 	string gridFile;
 	cout << "Enter the name of the grid file: ";
 	cin >> gridFile;
