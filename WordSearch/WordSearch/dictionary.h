@@ -4,6 +4,7 @@
 #pragma once
 #include <iostream>
 #include <vector>
+#include "heap.h"
 
 using namespace std;
 
@@ -16,7 +17,9 @@ public:
 	void selectionSort();
 	int binarySearch(string word);
 	void writeToSortedDictFile();
-
+	void quicksort(int left, int right);
+	void heapsort();
+	int getSize();
 	// friend for easy pritning of the dictionary
 	friend ostream& operator<<(ostream& os, dictionary& dict)
 	{
@@ -26,8 +29,10 @@ public:
 		}
 		return os;
 	}
+	
 
 private:
 	vector<string> dict;
+	int partition(int left, int right);
 };
 

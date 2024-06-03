@@ -2,6 +2,7 @@
 // contains implementation for the dictionary class
 
 #include "dictionary.h"
+#include "heap.h"
 #include <fstream>
 #include <iostream>
 using namespace std;
@@ -93,4 +94,36 @@ int dictionary::binarySearch(string word)
 	}
 	// not found
 	return -1;
+}
+//quick sort algorthm using left and right parameters and right-most partition
+void dictionary::quicksort(int left, int right) {
+	if (left < right) {
+		int s = partition(left, right);
+		quicksort(left, s - 1);
+		quicksort(s + 1, right);
+	}
+	else { return; }
+}
+//partition function used in quicksort, rightmost pivot implementation
+int dictionary::partition(int left, int right) {
+	string x = dict[right];
+	int i = left - 1;
+	for (int j = left; j < right; j++) {
+		if (dict[j] <= x) {
+			i = i + 1;
+			swap(dict[i], dict[j]);
+		}
+	}
+	swap(dict[i + 1], dict[right]);
+	return (i + 1);
+}
+//public function to access size of private dict, used in main
+int dictionary::getSize() {
+	return dict.size();
+}
+//heap sort function which instantiates heap and copies dictionary values into it
+void dictionary::heapsort() {
+	heap heaperooni;
+	heaperooni.initializeMaxHeap(dict);
+	dict = heaperooni.heapsort();
 }

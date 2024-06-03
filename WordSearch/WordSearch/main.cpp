@@ -6,6 +6,7 @@
 
 #include "dictionary.h"
 #include "grid.h"
+#include "heap.h"
 
 using namespace std;
 
@@ -72,7 +73,7 @@ void findMatches(dictionary dict, grid g, vector<string> &found)
 	}
 }
 
-void search() {
+void search(int algo) {
 	// this function will handle loading inputs from keyboard input to control which grid and dictionary files to use
 	string gridFile;
 	cout << "Enter the name of the grid file: ";
@@ -100,7 +101,9 @@ void search() {
 		dict.readFromDictFile(path);
 		//sort the dictionary
 		cout << "Sorting the dictionary" << endl;
-		dict.selectionSort();
+		if (algo == 1){ dict.selectionSort(); }
+		else if (algo == 2) { dict.quicksort(0, dict.getSize() - 1); }
+		else if (algo == 3) { dict.heapsort(); }
 		//search for a word
 		cout << "Writing to the sorted dictionary file" << endl;
 		dict.writeToSortedDictFile();
@@ -132,6 +135,6 @@ void search() {
 int main()
 {
 	// call the search function to do all the work
-	search();
+	search(3); // 1 selection sort, 2 quicksort, 3 heap sort
 	return 0;
 }
