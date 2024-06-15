@@ -23,7 +23,7 @@ int main()
     ifstream fin;
 
     // Read the sample grid from the file.
-    string fileName = "sudoku1.txt";
+    string fileName = "sudoku.txt";
 
     fin.open(fileName.c_str());
     if (!fin)
@@ -36,20 +36,21 @@ int main()
     try
     {
         board b1(SquareSize);
-
 		// loop through the file and initialize the board 
         while (fin && fin.peek() != 'Z')
         {
+            board b1(SquareSize);
             // initilize the board
             b1.initialize(fin);
             // print the board
             b1.print();
-			// print the conflicts
+            // print the conflicts
             b1.printConflicts();
-        }
 
-        // check if board is solved (it hasn't)
-        b1.checkSolved();
+
+            // check if board is solved (it hasn't)
+            b1.checkSolved();
+        }
     }
 
     
