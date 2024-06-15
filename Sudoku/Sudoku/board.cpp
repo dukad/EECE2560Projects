@@ -107,7 +107,7 @@ int squareNumber(int i, int j)
     // Note that (int) i/SquareSize and (int) j/SquareSize are the x-y
     // coordinates of the square that i,j is in.  
 
-    return SquareSize * ((i - 1) / SquareSize) + (j - 1) / SquareSize;
+    return SquareSize * ((i) / SquareSize) + (j) / SquareSize;
 }
 
 void board::print()
@@ -206,7 +206,7 @@ void board::printConflicts() {
     for (int i=0; i < BoardSize; i++) {
         cout << "Square " << i << ": ";
         for (int j=0; j < BoardSize; j++) {
-            cout << box_conflicts[j][i] << " ";
+            cout << box_conflicts[i][j] << " ";
         }
         cout << endl;
     }
