@@ -111,7 +111,7 @@ int squareNumber(int i, int j)
 }
 
 void board::print()
-// Prints the current board.
+// Prints the current board in board format.
 {
    for (int i = 0; i < BoardSize; i++)
    {
@@ -184,6 +184,7 @@ void board::resetCell(int i, int j) {
 }
 
 void board::printConflicts() {
+    //for loops to iterate and print conflict matrices
     cout << "Row Conflicts: " << endl;
     for (int i=0; i < BoardSize; i++) {
         cout << "Row " << i << ": ";
@@ -223,6 +224,7 @@ bool board::checkSolved() {
             }
         }
     }
+    //output to screen
 	cout << "Board is solved\n" << endl;
     return true;
 }
