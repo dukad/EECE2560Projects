@@ -37,6 +37,8 @@ board::board(int sqSize)
    row_conflicts.resize(BoardSize, BoardSize);
    col_conflicts.resize(BoardSize, BoardSize);
    box_conflicts.resize(BoardSize, BoardSize);
+
+   digit_count.resize(BoardSize, 0);
    // initialize all values to false
    for (int i = 0; i < BoardSize; i++) {
 	   for (int j = 0; j < BoardSize; j++) {
@@ -227,4 +229,43 @@ bool board::checkSolved() {
     //output to screen
 	cout << "Board is solved\n" << endl;
     return true;
+}
+
+int board::getConstraintCount(int i, int j) {
+	// get the number of constraints on a cell
+	int count = 0;
+	for (int k = 0; k < BoardSize; k++) {
+		if (row_conflicts[i][k] || col_conflicts[j][k] || box_conflicts[squareNumber(i, j)][k]) {
+			count++;
+		}
+	}
+	return count;
+}
+
+bool board::Solve(int& counter) {
+	counter++;
+	// base case: check if the board is solved
+    if (checkSolved()) {
+        // print the counter
+		cout << "Number of recursive calls: " << counter << endl;
+        return true;
+    }
+	// board is not solved, find the most constrained cell that 
+    int max_constraints = 0;
+	int max_i = 0;
+	int max_j = 0;
+	for (int i = 0; i < BoardSize; i++) {
+		for (int j = 0; j < BoardSize; j++) {
+			if (value[i][j] == Blank) {
+				int constraints = getConstraintCount(i, j);
+				if (constraints > max_constraints) {
+					max_constraints = constraints;
+					max_i = i;
+					max_j = j;
+				}
+			}
+		}
+	}
+    // max constrained cell is now at i, j
+    
 }

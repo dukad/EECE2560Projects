@@ -21,8 +21,10 @@ public:
     void resetCell(int i, int j);
     bool checkSolved();
     void printConflicts();
+    bool Solve(int &counter);
 private:
 
+    int getConstraintCount(int n, int m);
     // The following matrices go from 1 to BoardSize in each
     // dimension, i.e., they are each (BoardSize+1) * (BoardSize+1)
 
@@ -32,5 +34,7 @@ private:
 	matrix<bool> row_conflicts;
 	matrix<bool> col_conflicts;
 	matrix<bool> box_conflicts;
+
+    vector<int> digit_count;
 
 };
