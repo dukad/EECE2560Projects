@@ -29,7 +29,7 @@ int numSolutions = 0;
 
 
 board::board(int sqSize)
-   : value(BoardSize+1,BoardSize+1)
+   : value(BoardSize,BoardSize)
 // Board constructor
 {
    clear();
@@ -51,8 +51,8 @@ board::board(int sqSize)
 void board::clear()
 // Mark all possible values as legal for each board entry
 {
-   for (int i = 1; i <= BoardSize; i++)
-      for (int j = 1; j <= BoardSize; j++)
+   for (int i = 0; i < BoardSize; i++)
+      for (int j = 0; j < BoardSize; j++)
       {
          value[i][j] = Blank;
       }
