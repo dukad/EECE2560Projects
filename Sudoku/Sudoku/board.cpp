@@ -178,15 +178,17 @@ void board::setCell(int i, int j, int val) {
 }
 
 void board::resetCell(int i, int j) {
+	cout << "reset function call" << endl;
+	//cout << i << " " << j << endl;
     // clear the conflicts in the associated row and column
 	if (value[i][j] != Blank) {
-		row_conflicts[i][value[i][j]] = false;
-		col_conflicts[j][value[i][j]] = false;
-		box_conflicts[squareNumber(i, j)][value[i][j]] = false;
-		digit_count[value[i][j]]--;
+		row_conflicts[i][value[i][j] - 1] = false;
+		col_conflicts[j][value[i][j] - 1] = false;
+		box_conflicts[squareNumber(i, j)][value[i][j] - 1] = false;
+		digit_count[value[i][j]-1]--;
 	}
     value[i][j] = Blank;
-
+	cout << " end of reset function" << endl;
 }
 
 void board::printConflicts() {
@@ -254,7 +256,7 @@ bool board::Solve(int& counter) {
         return true;
     }
 
-
+	cout << "Finding the most constrained cell..." << endl;
 	// board is not solved, find the most constrained cell that 
     int max_constraints = 0;
 	int max_i = 0;
@@ -272,6 +274,7 @@ bool board::Solve(int& counter) {
 		}
 	}
 
+	cout << "getting all valid numbers for the cell..." << endl;
     vector<int> valid_numbers;
     // max constrained cell is now at i, j
     // get all the valid numbers for the cell
@@ -282,10 +285,19 @@ bool board::Solve(int& counter) {
 			valid_numbers.push_back(k);
 		}
 	}
-    if (valid_numbers.size() == 0) return false;
+
+	cout << "Sorting the valid numbers..." << endl;
+	//cout << valid_numbers.size() << endl;
+    if (valid_numbers.empty()) {
+        //cout << "returning false...";
+        return false;
+    }
+	//cout << "292 "<< endl;
     // sort valid numbers, using their count in digit count as the key
 	for (int i = 0; i < valid_numbers.size(); i++) {
+		//cout << i << endl;
 		for (int j = i + 1; j < valid_numbers.size(); j++) {
+			//cout << i << " " << j << endl;
 			if (digit_count[valid_numbers[i] - 1] < digit_count[valid_numbers[j] - 1]) {
 				int temp = valid_numbers[i];
 				valid_numbers[i] = valid_numbers[j];
@@ -293,6 +305,8 @@ bool board::Solve(int& counter) {
 			}
 		}
 	}
+
+	cout << "Trying the valid numbers..." << endl;
 	// the valid numbers are now sorted in descending order of their count in digit count
 	// iterate through the valid numbers
     for (int i = 0; i < valid_numbers.size(); i++) {
@@ -300,8 +314,10 @@ bool board::Solve(int& counter) {
 		setCell(max_i, max_j, valid_numbers[i]);
 		// if the board is solved, return true
         if (Solve(counter)) return true;
+		//cout << "Resetting the cell..." << endl;
         // board is not solved, reset the cell
 		resetCell(max_i, max_j);
+		//cout << "Cell reset" << endl;
     }
 	return false;
 }

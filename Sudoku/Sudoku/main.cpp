@@ -4,6 +4,8 @@
 #include <iostream>
 #include <fstream>
 #include "board.h"
+#include <chrono>
+#include <thread>
 
 using namespace std;
 const int SquareSize = 3;
@@ -50,7 +52,10 @@ int main()
 
             // check if board is solved (it hasn't)
             int i = 0;
-            b1.Solve(i);
+            bool solved = b1.Solve(i);
+			cout << "Solved: " << solved << endl;
+			// print the board
+			b1.print();
         }
     }
 
