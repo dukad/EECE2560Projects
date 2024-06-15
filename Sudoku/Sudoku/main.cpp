@@ -23,7 +23,7 @@ int main()
     ifstream fin;
 
     // Read the sample grid from the file.
-    string fileName = "sudoku1.txt";
+    string fileName = "sudoku3.txt";
 
     fin.open(fileName.c_str());
     if (!fin)
@@ -46,7 +46,11 @@ int main()
             b1.print();
             b1.printConflicts();
         }
+
+        b1.checkSolved();
     }
+
+    
     catch (indexRangeError& ex)
     {
         cout << ex.what() << endl;

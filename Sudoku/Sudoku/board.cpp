@@ -218,9 +218,11 @@ bool board::checkSolved() {
     for (int i = 1; i <= BoardSize; i++) {
         for (int j = 1; j <= BoardSize; j++) {
             if (value[i][j] == Blank) {
+				cout << "Board is not solved\n" << endl;
                 return false;
             }
         }
     }
+	cout << "Board is solved\n" << endl;
     return true;
 }
