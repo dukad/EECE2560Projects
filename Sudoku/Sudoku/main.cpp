@@ -39,6 +39,7 @@ int main()
     {
         board b1(SquareSize);
         int total_calls = 0;
+        int board_num = 1;
 		// loop through the file and initialize the board 
         while (fin && fin.peek() != 'Z')
         {
@@ -46,6 +47,7 @@ int main()
             // initilize the board
             b1.initialize(fin);
             // print the board
+            cout << "Board Number: " << board_num << endl;
             b1.print();
             // print the conflicts
             //b1.printConflicts();
@@ -58,6 +60,7 @@ int main()
             total_calls += i;
 			// print the board
 			b1.print();
+            board_num++;
         }
     }
 
