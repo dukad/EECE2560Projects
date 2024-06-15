@@ -33,6 +33,17 @@ board::board(int sqSize)
 // Board constructor
 {
    clear();
+   // resive conflict coutners to be the width of the board
+   row_conflicts.resize(BoardSize);
+   col_conflicts.resize(BoardSize);
+   box_conflicts.resize(BoardSize);
+   // initialize all conflicts to false
+   for (int i = 0; i < BoardSize; i++)
+   {
+	   row_conflicts[i] = false;
+	   col_conflicts[i] = false;
+	   box_conflicts[i] = false;
+   }
 }
 
 void board::clear()
@@ -63,23 +74,6 @@ void board::initialize(ifstream &fin)
         }
 }
 
-int squareNumber(int i, int j)
-// Return the square number of cell i,j (counting from left to right,
-// top to bottom.  Note that i and j each go from 1 to BoardSize
-{
-   // Note that (int) i/SquareSize and (int) j/SquareSize are the x-y
-   // coordinates of the square that i,j is in.  
-
-   return SquareSize * ((i-1)/SquareSize) + (j-1)/SquareSize + 1;
-}
-
-ostream &operator<<(ostream &ostr, vector<int> &v)
-// Overloaded output operator for vector class.
-{
-   for (int i = 0; i < v.size(); i++)
-      ostr << v[i] << " ";
-   cout << endl;
-}
 
 ValueType board::getCell(int i, int j)
 // Returns the value stored in a cell.  Throws an exception

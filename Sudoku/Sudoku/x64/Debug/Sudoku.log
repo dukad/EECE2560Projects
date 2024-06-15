@@ -1,0 +1,9 @@
+﻿  board.cpp
+  main.cpp
+C:\Users\kaden\Documents\Summer 2024\Eng. Algorithms\EECE2560Projects\Sudoku\Sudoku\board.cpp(62,14): error C3861: 'setCell': identifier not found
+C:\Users\kaden\Documents\Summer 2024\Eng. Algorithms\EECE2560Projects\Sudoku\Sudoku\main.cpp(26,18): error C2065: 'SquareSize': undeclared identifier
+C:\Users\kaden\Documents\Summer 2024\Eng. Algorithms\EECE2560Projects\Sudoku\Sudoku\main.cpp(32,16): error C2039: 'printConflicts': is not a member of 'board'
+  C:\Users\kaden\Documents\Summer 2024\Eng. Algorithms\EECE2560Projects\Sudoku\Sudoku\board.h(8,7):
+  see declaration of 'board'
+  
+  Generating Code...
