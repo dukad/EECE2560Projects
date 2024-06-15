@@ -7,6 +7,8 @@
 #include <list>
 #include <fstream>
 
+#include "board.h"
+
 using namespace std;
 
 typedef int ValueType; // The type of the value in a cell
@@ -24,24 +26,7 @@ const int MaxValue = 9;
 
 int numSolutions = 0;
 
-class board
-// Stores the entire Sudoku board
-{
-   public:
-      board(int);
-      void clear();
-      void initialize(ifstream &fin);
-      void print();
-      bool isBlank(int, int);
-      ValueType getCell(int, int);
-      
-   private:
 
-      // The following matrices go from 1 to BoardSize in each
-      // dimension, i.e., they are each (BoardSize+1) * (BoardSize+1)
-
-      matrix<ValueType> value;
-};
 
 board::board(int sqSize)
    : value(BoardSize+1,BoardSize+1)
@@ -148,34 +133,3 @@ void board::print()
    cout << endl;
 }
 
-int main()
-{
-   ifstream fin;
-   
-   // Read the sample grid from the file.
-   string fileName = "sudoku.txt";
-
-   fin.open(fileName.c_str());
-   if (!fin)
-   {
-      cerr << "Cannot open " << fileName << endl;
-      exit(1);
-   }
-
-   try
-   {
-      board b1(SquareSize);
-
-      while (fin && fin.peek() != 'Z')
-      {
-	 b1.initialize(fin);
-	 b1.print();
-	 b1.printConflicts();
-      }
-   }
-   catch  (indexRangeError &ex)
-   {
-      cout << ex.what() << endl;
-      exit(1);
-   }
-}
