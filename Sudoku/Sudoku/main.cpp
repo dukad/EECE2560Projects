@@ -49,7 +49,8 @@ int main()
 
 
             // check if board is solved (it hasn't)
-            b1.checkSolved();
+            int i = 0;
+            b1.Solve(i);
         }
     }
 

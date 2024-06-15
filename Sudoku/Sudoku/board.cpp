@@ -46,6 +46,7 @@ board::board(int sqSize)
 		   col_conflicts[i][j] = false;
 		   box_conflicts[i][j] = false;
 	   }
+	   digit_count[i] = 0;
    }
    
 }
@@ -173,6 +174,7 @@ void board::setCell(int i, int j, int val) {
 		col_conflicts[j][val-1] = true;
 		box_conflicts[squareNumber(i, j)][val-1] = true;
 	}
+	digit_count[val - 1]++;
 }
 
 void board::resetCell(int i, int j) {
@@ -181,8 +183,10 @@ void board::resetCell(int i, int j) {
 		row_conflicts[i][value[i][j]] = false;
 		col_conflicts[j][value[i][j]] = false;
 		box_conflicts[squareNumber(i, j)][value[i][j]] = false;
+		digit_count[value[i][j]]--;
 	}
     value[i][j] = Blank;
+
 }
 
 void board::printConflicts() {
@@ -221,13 +225,12 @@ bool board::checkSolved() {
     for (int i = 1; i <= BoardSize; i++) {
         for (int j = 1; j <= BoardSize; j++) {
             if (value[i][j] == Blank) {
-				cout << "Board is not solved\n" << endl;
                 return false;
             }
         }
     }
     //output to screen
-	cout << "Board is solved\n" << endl;
+	
     return true;
 }
 
@@ -250,6 +253,8 @@ bool board::Solve(int& counter) {
 		cout << "Number of recursive calls: " << counter << endl;
         return true;
     }
+
+
 	// board is not solved, find the most constrained cell that 
     int max_constraints = 0;
 	int max_i = 0;
@@ -266,6 +271,37 @@ bool board::Solve(int& counter) {
 			}
 		}
 	}
+
+    vector<int> valid_numbers;
     // max constrained cell is now at i, j
-    
+    // get all the valid numbers for the cell
+	for (int k = 1; k <= BoardSize; k++) {
+		// check if the number is valid
+		if (!row_conflicts[max_i][k - 1] && !col_conflicts[max_j][k - 1] && !box_conflicts[squareNumber(max_i, max_j)][k - 1]) {
+			// store the number in a vector
+			valid_numbers.push_back(k);
+		}
+	}
+    if (valid_numbers.size() == 0) return false;
+    // sort valid numbers, using their count in digit count as the key
+	for (int i = 0; i < valid_numbers.size(); i++) {
+		for (int j = i + 1; j < valid_numbers.size(); j++) {
+			if (digit_count[valid_numbers[i] - 1] < digit_count[valid_numbers[j] - 1]) {
+				int temp = valid_numbers[i];
+				valid_numbers[i] = valid_numbers[j];
+				valid_numbers[j] = temp;
+			}
+		}
+	}
+	// the valid numbers are now sorted in descending order of their count in digit count
+	// iterate through the valid numbers
+    for (int i = 0; i < valid_numbers.size(); i++) {
+        // try the number
+		setCell(max_i, max_j, valid_numbers[i]);
+		// if the board is solved, return true
+        if (Solve(counter)) return true;
+        // board is not solved, reset the cell
+		resetCell(max_i, max_j);
+    }
+	return false;
 }
