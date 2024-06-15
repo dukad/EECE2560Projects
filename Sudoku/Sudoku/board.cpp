@@ -179,14 +179,41 @@ void board::resetCell(int i, int j) {
     value[i][j] = Blank;
 }
 
+void board::printConflicts() {
+    cout << "Row Conflicts: " << endl;
+    for (int i; i < BoardSize; i++) {
+        cout << "Row " << i << ": " << endl;
+        for (int j; j < BoardSize; j++) {
+            cout << row_conflicts[i][j] << " ";
+        }
+    }
+    cout << "/n";
+    cout << "Column Conflicts: " << endl;
+    for (int i; i < BoardSize; i++) {
+        cout << "Column " << i << ": " << endl;
+        for (int j; j < BoardSize; j++) {
+            cout << col_conflicts[i][j] << " ";
+        }
+    }
+    cout << "/n";
+    cout << "Square Conflicts: " << endl;
+    for (int i; i < BoardSize; i++) {
+        cout << "Square " << i << ": " << endl;
+        for (int j; j < BoardSize; j++) {
+            cout << box_conflicts[j][i] << " ";
+        }
+    }
+    cout << "/n";
+}
+
 bool board::checkSolved() {
-	// check to see if there is a value in every cell
-	for (int i = 1; i <= BoardSize; i++) {
-		for (int j = 1; j <= BoardSize; j++) {
-			if (value[i][j] == Blank) {
-				return false;
-			}
-		}
-	}
-	return true;
+    // check to see if there is a value in every cell
+    for (int i = 1; i <= BoardSize; i++) {
+        for (int j = 1; j <= BoardSize; j++) {
+            if (value[i][j] == Blank) {
+                return false;
+            }
+        }
+    }
+    return true;
 }

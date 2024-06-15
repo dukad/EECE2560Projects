@@ -129,11 +129,13 @@
   <ItemGroup>
     <ClCompile Include="dictionary.cpp" />
     <ClCompile Include="grid.cpp" />
+    <ClCompile Include="heap.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="dictionary.h" />
     <ClInclude Include="grid.h" />
+    <ClInclude Include="heap.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

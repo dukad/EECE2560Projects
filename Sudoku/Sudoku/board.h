@@ -19,7 +19,7 @@ public:
     void setCell(int i, int j, int val);
     void resetCell(int i, int j);
     bool checkSolved();
-
+    void printConflicts();
 private:
 
     // The following matrices go from 1 to BoardSize in each

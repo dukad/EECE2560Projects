@@ -134,7 +134,11 @@ void search(int algo) {
 
 int main()
 {
+	int algo;
+	cout << "What sorting algorithm would you like to use? (1 = Selection; 2 = Quick; 3 = Heap): ";
+	cin >> algo;
 	// call the search function to do all the work
-	search(3); // 1 selection sort, 2 quicksort, 3 heap sort
-	return 0;
+	search(algo); // 1 selection sort, 2 quicksort, 3 heap sort
+	// Selection takes about 20 minutes on the 50 input. Quick and Heap take less than a few seconds
+	return 0; 
 }
