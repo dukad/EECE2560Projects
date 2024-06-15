@@ -140,8 +140,8 @@ void board::print()
 }
 
 void board::setCell(int i, int j, int val) {
-    // check to make sure there is no coflicts
-    if (val != Blank) {
+    // check to make sure it is between min and max
+	if (!(val < MinValue || val > MaxValue)) {
         // check row
 		if (row_conflicts[i-1][val-1]) {
 			throw rangeError("row conflict");
@@ -154,6 +154,9 @@ void board::setCell(int i, int j, int val) {
         if (box_conflicts[squareNumber(i, j)][val-1]) {
 			throw rangeError("box conflict");
         }
+    }
+    else {
+		throw rangeError("value out of range");
     }
     // reset the cell
 	resetCell(i, j);
@@ -174,4 +177,16 @@ void board::resetCell(int i, int j) {
 		box_conflicts[squareNumber(i, j)][value[i-1][j-1]] = false;
 	}
     value[i][j] = Blank;
+}
+
+bool board::checkSolved() {
+	// check to see if there is a value in every cell
+	for (int i = 1; i <= BoardSize; i++) {
+		for (int j = 1; j <= BoardSize; j++) {
+			if (value[i][j] == Blank) {
+				return false;
+			}
+		}
+	}
+	return true;
 }

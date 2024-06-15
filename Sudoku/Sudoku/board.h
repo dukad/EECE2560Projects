@@ -18,6 +18,7 @@ public:
     ValueType getCell(int, int);
     void setCell(int i, int j, int val);
     void resetCell(int i, int j);
+    bool checkSolved();
 
 private:
 
