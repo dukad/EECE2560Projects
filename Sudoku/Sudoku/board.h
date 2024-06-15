@@ -16,6 +16,8 @@ public:
     void print();
     bool isBlank(int, int);
     ValueType getCell(int, int);
+    void setCell(int i, int j, int val);
+    void resetCell(int i, int j);
 
 private:
 

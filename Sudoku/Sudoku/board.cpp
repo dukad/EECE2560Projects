@@ -127,3 +127,10 @@ void board::print()
    cout << endl;
 }
 
+void board::setCell(int i, int j, int val) {
+    value[i][j] = val;
+}
+
+void board::resetCell(int i, int j) {
+    value[i][j] = Blank;
+}
