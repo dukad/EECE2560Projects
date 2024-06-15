@@ -2,6 +2,7 @@
 
 #include <iostream>
 #include "d_matrix.h"
+#include <vector>
 
 typedef int ValueType;
 
@@ -24,4 +25,10 @@ private:
     // dimension, i.e., they are each (BoardSize+1) * (BoardSize+1)
 
     matrix<ValueType> value;
+
+    // initialize boolean vectors for conflicts coutners, first index is row, second is value
+	matrix<bool> row_conflicts;
+	matrix<bool> col_conflicts;
+	matrix<bool> box_conflicts;
+
 };

@@ -6,6 +6,16 @@
 #include "board.h"
 
 using namespace std;
+const int SquareSize = 3;
+
+
+ostream& operator<<(ostream& ostr, vector<int>& v)
+// Overloaded output operator for vector class.
+{
+    for (int i = 0; i < v.size(); i++)
+        ostr << v[i] << " ";
+    cout << endl;
+}
 
 int main()
 {

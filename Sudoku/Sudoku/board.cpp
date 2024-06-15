@@ -33,6 +33,19 @@ board::board(int sqSize)
 // Board constructor
 {
    clear();
+   // resive conflict coutners to be the widthxwidth
+   row_conflicts.resize(BoardSize, BoardSize);
+   col_conflicts.resize(BoardSize, BoardSize);
+   box_conflicts.resize(BoardSize, BoardSize);
+   // initialize all values to false
+   for (int i = 0; i < BoardSize; i++) {
+	   for (int j = 0; j < BoardSize; j++) {
+		   row_conflicts[i][j] = false;
+		   col_conflicts[i][j] = false;
+		   box_conflicts[i][j] = false;
+	   }
+   }
+   
 }
 
 void board::clear()
@@ -63,23 +76,6 @@ void board::initialize(ifstream &fin)
         }
 }
 
-int squareNumber(int i, int j)
-// Return the square number of cell i,j (counting from left to right,
-// top to bottom.  Note that i and j each go from 1 to BoardSize
-{
-   // Note that (int) i/SquareSize and (int) j/SquareSize are the x-y
-   // coordinates of the square that i,j is in.  
-
-   return SquareSize * ((i-1)/SquareSize) + (j-1)/SquareSize + 1;
-}
-
-ostream &operator<<(ostream &ostr, vector<int> &v)
-// Overloaded output operator for vector class.
-{
-   for (int i = 0; i < v.size(); i++)
-      ostr << v[i] << " ";
-   cout << endl;
-}
 
 ValueType board::getCell(int i, int j)
 // Returns the value stored in a cell.  Throws an exception
@@ -98,6 +94,16 @@ bool board::isBlank(int i, int j)
       throw rangeError("bad value in setCell");
 
    return (getCell(i,j) == Blank);
+}
+
+int squareNumber(int i, int j)
+// Return the square number of cell i,j (counting from left to right,
+// top to bottom.  Note that i and j each go from 1 to BoardSize
+{
+    // Note that (int) i/SquareSize and (int) j/SquareSize are the x-y
+    // coordinates of the square that i,j is in.  
+
+    return SquareSize * ((i - 1) / SquareSize) + (j - 1) / SquareSize;
 }
 
 void board::print()
@@ -134,10 +140,39 @@ void board::print()
 }
 
 void board::setCell(int i, int j, int val) {
-    value[i][j] = val;
+    // check to make sure there is no coflicts
+    if (val != Blank) {
+        // check row
+		if (row_conflicts[i-1][val-1]) {
+			throw rangeError("row conflict");
+		}
+		// check column
+        if (col_conflicts[j][val-1]) {
+			throw rangeError("column conflict");
+        }
+        // check box conflicts
+        if (box_conflicts[squareNumber(i, j)][val-1]) {
+			throw rangeError("box conflict");
+        }
+    }
+    // reset the cell
+	resetCell(i, j);
+    value[i-1][j-1] = val;
+    // update conflicts
+	if (val != Blank) {
+		row_conflicts[i-1][val-1] = true;
+		col_conflicts[j-1][val-1] = true;
+		box_conflicts[squareNumber(i, j)][val-1] = true;
+	}
 }
 
 void board::resetCell(int i, int j) {
+    // clear the conflicts in the associated row and column
+	if (value[i][j] != Blank) {
+		row_conflicts[i-1][value[i-1][j-1]] = false;
+		col_conflicts[j-1][value[i-1][j-1]] = false;
+		box_conflicts[squareNumber(i, j)][value[i-1][j-1]] = false;
+	}
     value[i][j] = Blank;
 }
 

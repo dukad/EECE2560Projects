@@ -1,0 +1,8 @@
+﻿  board.cpp
+  main.cpp
+  Generating Code...
+C:\Users\kaden\Documents\Summer 2024\Eng. Algorithms\EECE2560Projects\Sudoku\Sudoku\main.cpp(36,18): error C2065: 'SquareSize': undeclared identifier
+C:\Users\kaden\Documents\Summer 2024\Eng. Algorithms\EECE2560Projects\Sudoku\Sudoku\main.cpp(42,16): error C2039: 'printConflicts': is not a member of 'board'
+  C:\Users\kaden\Documents\Summer 2024\Eng. Algorithms\EECE2560Projects\Sudoku\Sudoku\board.h(9,7):
+  see declaration of 'board'
+  
