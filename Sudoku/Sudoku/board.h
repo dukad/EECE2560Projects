@@ -26,9 +26,9 @@ private:
 
     matrix<ValueType> value;
 
-    // initialize boolean vectors for conflicts coutners
-    vector<bool> row_conflicts;
-	vector<bool> col_conflicts;
-	vector<bool> box_conflicts;
+    // initialize boolean vectors for conflicts coutners, first index is row, second is value
+	matrix<bool> row_conflicts;
+	matrix<bool> col_conflicts;
+	matrix<bool> box_conflicts;
 
 };
