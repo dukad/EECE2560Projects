@@ -62,6 +62,9 @@ int main()
 			b1.print();
             board_num++;
         }
+        // print the total and average number of calls
+		cout << "Total number of calls: " << total_calls << endl;
+		cout << "Average number of calls: " << total_calls / board_num << endl;
     }
 
     
