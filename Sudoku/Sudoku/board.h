@@ -10,6 +10,7 @@ class board
     // Stores the entire Sudoku board
 {
 public:
+    // public methods
     board(int);
     void clear();
     void initialize(ifstream& fin);

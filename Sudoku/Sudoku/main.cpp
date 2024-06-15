@@ -28,11 +28,10 @@ int main()
     fin.open(fileName.c_str());
     if (!fin)
     {
+        // cant open file, throw error
         cerr << "Cannot open " << fileName << endl;
         exit(1);
     }
-
-	cout << "Reading initial board from file " << fileName << endl;
 
     try
     {
@@ -41,20 +40,22 @@ int main()
 		// loop through the file and initialize the board 
         while (fin && fin.peek() != 'Z')
         {
-            
+            // initilize the board
             b1.initialize(fin);
-			cout << "INITIAL BOARD" << endl;
+            // print the board
             b1.print();
+			// print the conflicts
             b1.printConflicts();
         }
 
-        // check if board is solved
+        // check if board is solved (it hasn't)
         b1.checkSolved();
     }
 
     
     catch (indexRangeError& ex)
     {
+        // error catching
         cout << ex.what() << endl;
         exit(1);
     }
