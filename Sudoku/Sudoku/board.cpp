@@ -140,3 +140,7 @@ void board::setCell(int i, int j, int val) {
 void board::resetCell(int i, int j) {
     value[i][j] = Blank;
 }
+
+void board::printConflicts() {
+
+}

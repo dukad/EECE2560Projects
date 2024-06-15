@@ -1,6 +1,2 @@
-﻿  dictionary.cpp
-C:\Users\kaden\Documents\Summer 2024\Eng. Algorithms\EECE2560Projects\WordSearch\WordSearch\dictionary.cpp(71,11): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-  grid.cpp
-  main.cpp
-  Generating Code...
-  WordSearch.vcxproj -> C:\Users\kaden\Documents\Summer 2024\Eng. Algorithms\EECE2560Projects\WordSearch\x64\Debug\WordSearch.exe
+﻿  main.cpp
+  WordSearch.vcxproj -> C:\Users\ryand\OneDrive - Northeastern University\Fundamentals of Algorithms\Github Stuff\EECE2560Projects\WordSearch\x64\Debug\WordSearch.exe
