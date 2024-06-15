@@ -38,6 +38,7 @@ int main()
     try
     {
         board b1(SquareSize);
+        int total_calls = 0;
 		// loop through the file and initialize the board 
         while (fin && fin.peek() != 'Z')
         {
@@ -47,13 +48,14 @@ int main()
             // print the board
             b1.print();
             // print the conflicts
-            b1.printConflicts();
+            //b1.printConflicts();
 
 
             // check if board is solved (it hasn't)
             int i = 0;
             bool solved = b1.Solve(i);
 			cout << "Solved: " << solved << endl;
+            total_calls += i;
 			// print the board
 			b1.print();
         }

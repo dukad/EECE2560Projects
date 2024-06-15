@@ -9,6 +9,10 @@
 
 #include "board.h"
 
+
+#include <chrono>
+#include <thread>
+
 using namespace std;
 
 typedef int ValueType; // The type of the value in a cell
@@ -166,6 +170,7 @@ void board::setCell(int i, int j, int val) {
 		throw rangeError("value out of range");
     }
     // reset the cell
+	//cout << "calling reset from setCell" << endl;
 	resetCell(i, j);
     value[i][j] = val;
     // update conflicts
@@ -178,7 +183,7 @@ void board::setCell(int i, int j, int val) {
 }
 
 void board::resetCell(int i, int j) {
-	cout << "reset function call" << endl;
+	//cout << "reset function call" << endl;
 	//cout << i << " " << j << endl;
     // clear the conflicts in the associated row and column
 	if (value[i][j] != Blank) {
@@ -188,7 +193,7 @@ void board::resetCell(int i, int j) {
 		digit_count[value[i][j]-1]--;
 	}
     value[i][j] = Blank;
-	cout << " end of reset function" << endl;
+	//cout << "end of reset function" << endl;
 }
 
 void board::printConflicts() {
@@ -223,9 +228,10 @@ void board::printConflicts() {
 }
 
 bool board::checkSolved() {
+	//cout << "checking if solved" << endl;
     // check to see if there is a value in every cell
-    for (int i = 1; i <= BoardSize; i++) {
-        for (int j = 1; j <= BoardSize; j++) {
+    for (int i = 0; i < BoardSize; i++) {
+        for (int j = 0; j < BoardSize; j++) {
             if (value[i][j] == Blank) {
                 return false;
             }
@@ -249,6 +255,8 @@ int board::getConstraintCount(int i, int j) {
 
 bool board::Solve(int& counter) {
 	counter++;
+	// print the board
+	//print();
 	// base case: check if the board is solved
     if (checkSolved()) {
         // print the counter
@@ -256,7 +264,7 @@ bool board::Solve(int& counter) {
         return true;
     }
 
-	cout << "Finding the most constrained cell..." << endl;
+	//cout << "Finding the most constrained cell..." << endl;
 	// board is not solved, find the most constrained cell that 
     int max_constraints = 0;
 	int max_i = 0;
@@ -274,7 +282,9 @@ bool board::Solve(int& counter) {
 		}
 	}
 
-	cout << "getting all valid numbers for the cell..." << endl;
+	//cout << "Most constrained cell found at: " << max_i << " " << max_j << endl;
+
+	//cout << "getting all valid numbers for the cell..." << endl;
     vector<int> valid_numbers;
     // max constrained cell is now at i, j
     // get all the valid numbers for the cell
@@ -286,7 +296,7 @@ bool board::Solve(int& counter) {
 		}
 	}
 
-	cout << "Sorting the valid numbers..." << endl;
+	//cout << "Sorting the valid numbers..." << endl;
 	//cout << valid_numbers.size() << endl;
     if (valid_numbers.empty()) {
         //cout << "returning false...";
@@ -306,10 +316,11 @@ bool board::Solve(int& counter) {
 		}
 	}
 
-	cout << "Trying the valid numbers..." << endl;
+	//cout << "Trying the valid numbers..." << endl;
 	// the valid numbers are now sorted in descending order of their count in digit count
 	// iterate through the valid numbers
     for (int i = 0; i < valid_numbers.size(); i++) {
+		//cout << "trying number: " << valid_numbers[i] << " at cell: " << max_i << " " << max_j << endl;
         // try the number
 		setCell(max_i, max_j, valid_numbers[i]);
 		// if the board is solved, return true
@@ -319,5 +330,7 @@ bool board::Solve(int& counter) {
 		resetCell(max_i, max_j);
 		//cout << "Cell reset" << endl;
     }
+
+	//cout << "returning false at funciton completion" << endl;
 	return false;
 }
